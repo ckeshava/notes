@@ -19,13 +19,15 @@
     - **Tilde**
         - `HEAD^^^ = HEAD~3` : tilde specifies the same info as ^ in multiples
         - We can even intermix these two conventions HEAD~3^2
-<br>
-**Commit Ranges:**
-- Suppose there are many branches and we need to know - **What work is there in this branch, that I have not yet merged to my main repo???**
-__Double Dot:__
+	
+__Commit Ranges:__
+Suppose there are many branches and we need to know : __What work is there in this branch, that I have not yet merged to my main repo???__
+
++ __Double Dot:__
     -`git log branch1..branch2` - shows all the commits reachable from branch2, but not reachable from branch1 - branch2 is assumed to be HEAD by default
     - `git log origin/master..` - if we do a git push and the current branch tracks origin/master as the remote, then these are the commits that will be pushed to the origin remote. It shows the commits that are reachable by HEAD, but not  reachable by origin/master
-**Multiple Points:**
+    
++ __Multiple Points:__
 	- `git log ref1..ref2` , `git log ^ref1 ref2`, `git log ref2 --not ref1` - equivalent commands
 	- Very useful query system - we can specify commits reachable from two/more branches but not reachable from a particular branch
 	- `git log ref1 ref2 ^ref3`, `git log ref1 ref2 --not ref3` ==> commits reachable from ref1 or ref2 but **not from** ref3
