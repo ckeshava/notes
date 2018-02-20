@@ -22,6 +22,7 @@ If I make any patch to a project, and if a core contributor of the project appli
 - `git log grep="param1" grep="param2" --all-match"` : Gives the commits that match all of the grep commands.
 - `git log -S <function_name>` : 
 - `git log --no-merges` : Displays the commits that are not merge commits. This is because, usually merge commits of disparate offer little useful information. 
+- ![03msgdsmbiuj714i](/:storage/03msgdsmbiuj714i.png)
 
 
 
