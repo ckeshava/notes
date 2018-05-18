@@ -1,0 +1,16 @@
+[Distributed Optimization by Ant Colonies](https://books.google.co.in/books?hl=en&lr=&id=pWsNJkdZ4tgC&oi=fnd&pg=PA134&dq=distibuted+optimization+by+ant+colonies&ots=86F3k_oLWB&sig=IU2ZkdlnAR2osoDVvRF-iHHhn3s#v=onepage&q=distibuted%20optimization%20by%20ant%20colonies&f=false)
+
+This paper is biologically motovated from ants. Individual ants are nearly blind, yet a _colony of ants_ are able to achieve seemingly complex tasks, using stigmergic information(pheromone trails). This paper aims to solve the Travelling Salesman Problem(TSP), by modelling it using artificial ants. More specifically, it uses the concept of pheromone trails and one other heurestic in the optimization process.
+
+Contributions: Presents three variations of the core algorithm - Ant-Density, Ant-Quantity and Ant-Cycle. It also presents simulations and the empirical values for three hyper-parameters. Achieves competitive results on different instances of TSP. Some of the mathematical hypotheses seems to have been done in other previous works. Experimental results are presented. (1) The importance of pheromone trails vs. visibility ($ \eta $) is analysed.  (2) the ability of this algorithm to scale up to larger problems is analysed (3) the effect of the number of ants on the results and the rate of convergence to the results.
+
+Ants will non-deterministically (probabilistically) choose the next city.
+
+Doubts:
+1. Mathematical proof of convergence is not presented. Specifically, _Why does Ant Colony Optimization work?_ is not answered.
+2. An upper bound on the number of iterations required fo convergence, if at all possible, is also not available.
+3. In the pheromone updation process, all the ants and their trail are considered. But, no justification is provided regarding why all the ants are considered. For instance, as an alternative, a subset of the ants could have been considered based on certain quantitative measure.
+4. The possibility of pheromone trails looping around is not considered. This might create a vicious cycle, where the ants might be looping aroung, without preferring the shortest paths.
+5. The experimental results conclude that the _greedy heuristic, $ \eta $_ is the most important parameter, ie. setting it to zero, does not bring about convergence. But this is counter-intuitive because, (1) the information given by $ \eta $ is already encoded in the pheromone updation step in the Ant-Quantity algorithm. Hence, since it contains redundant information. (2) This is a greedy heuristic, choosing greater probablity for the edge in the previous cycle, that was the shortest in length. I found it hard to accept this as the most important parameter.
+The other parameters, only affect the rate of convergence. Mathematical reasons for these needs to be explored.
+6. Qualitatively, Ant-Density and Ant-Quantity are identical, as they do not use different information to make decisions. But the latter is found to get stuck at local minima, unlike the former. Mathematical argument to prove the same needs to be explored. 
